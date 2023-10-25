@@ -208,8 +208,8 @@ struct HomeView: View {
                 
             }
         }}
-    struct ShowExploerView: PreviewProvider {
+    struct ShowHomeView: PreviewProvider {
         static var previews: some View {
-            ExploerView()
+          HomeView()
         }}
 }

@@ -8,15 +8,12 @@
 import SwiftUI
 struct ExploerView: View {
     var body: some View {
-        
         ZStack{
             Color.black
             
-                .ignoresSafeArea(.all)
-            
             ScrollView{
                 Text("Explore")
-                    .font(.largeTitle)
+                    .font(.title)
                     .foregroundColor(.white)
                     .padding()
                     .fontWeight(.bold)
@@ -26,39 +23,45 @@ struct ExploerView: View {
                     Text("Star")
                         .font(.body)
                         .foregroundColor(Color.white)
-                    
-                    //.frame(width: 100.0, height: 100.0)
-                        .background(RoundedRectangle(cornerRadius:30)
-                            .frame(width: 300, height:60 )
-                            .foregroundColor(Color.gray))
+                        .background(RoundedRectangle(cornerRadius:20)
+                            .padding()
+                            .frame(width: 500, height:100 ))
+                        .font(.body)
+                        .padding()
+                        .foregroundColor(Color.gray.opacity(0.3))
                         .padding()
                             
                                     Spacer()
 
-                   // Image("Image2")
-                      //  .resizable()
-                        //.frame(width: 350 , height:450)
-                            
+                    Image("Image")
+                       .resizable()
+                        .frame(width: 600 , height:450)
+                    
+                    Spacer()
+
                                    
                     
                     Text("Star")
                         .font(.body)
                         .foregroundColor(Color.white)
-                    
-                    //.frame(width: 100.0, height: 100.0)
-                        .background(RoundedRectangle(cornerRadius:30)
-                            .frame(width: 300, height:60 )
-                            .foregroundColor(Color.gray))
+                        .background(RoundedRectangle(cornerRadius:20)
+                            .padding()
+                            .frame(width: 500, height:100 ))
+                        .font(.body)
+                        .padding()
+                        .foregroundColor(Color.gray.opacity(0.3))
                         .padding()
                     
                     
-                         }}}}
+                                    }}}}
+    }
+
     
     struct ShowExploerView: PreviewProvider {
         static var previews: some View {
             ExploerView()
         }}
-}
+
 
         
 

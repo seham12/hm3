@@ -14,24 +14,24 @@ struct TabView11: View {
             NavigationStack{
                 HomeView()
                     .tabItem {
-                        Image(systemName: "house")
-                        Text("Home")
+                        Label("Home", systemImage: "house")
                     }
-                
-                InboxView()
-                    .tabItem {
-                        Image(systemName: "folder.fill")
-                        Text("InboxView")
-                    }
-                ExploerView()
-                    .tabItem {
-                        Image(systemName: "globe.central.south.asia")
-                        Text("Exploer")
-                        
-                    }
-                
-            }}}
-    struct ShowTabView11: PreviewProvider{
+                NavigationStack{
+                   // InboxView()
+                    Text("")
+                        .tabItem {
+                            Label("InboxView", systemImage: "folder.fill")
+                        }
+                }
+                NavigationStack{
+                    ExploerView()
+                        .tabItem {
+                            
+                            Label("Exploer", systemImage: "globe.central.south.asia")
+                        }
+                    
+                }}}}
+    struct TabView11_PreviewProvider{
         static var previews: some View {
             TabView11()
         }}

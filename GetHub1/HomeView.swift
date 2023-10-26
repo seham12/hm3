@@ -6,210 +6,144 @@
 //
 
 import SwiftUI
+
 struct HomeView: View {
+    let myWorkRows: Array<RowData> = [
+        RowData(
+            title: "Issues",
+            leadingImageName: "record.circle",
+            leadingImageBackgroundColor: .green
+        ),
+        RowData(
+            title: "Pull Requests",
+            leadingImageName: "dots.and.line.vertical.and.cursorarrow.rectangle",
+            leadingImageBackgroundColor: .blue
+        ),
+        RowData(
+            title: "Discussions",
+            leadingImageName: "bubble.left.and.bubble.right",
+            leadingImageBackgroundColor: .purple
+        ),
+        RowData(
+            title: "Repositories",
+            leadingImageName: "book.closed",
+            leadingImageBackgroundColor: .black
+        ),
+        RowData(
+            title: "Organizations",
+            leadingImageName: "building.2",
+            leadingImageBackgroundColor: .orange
+        ),
+    ]
+    @available(iOS 15.0, *)
     var body: some View {
-        
-        
-        ZStack{
-            Color.black
-                .ignoresSafeArea(.all)
-            
-            ScrollView{
-                Text("Home")
-                    .font(.largeTitle)
-                    .foregroundColor(.white)
-                    .padding(.trailing,250)
-                
-                    .bold()
-                VStack{
-                    (RoundedRectangle(cornerRadius:30)
-                        .frame(width: 300, height: 50)
-                    )
-                    
-                    HStack{
-                        
-                        Text("My Work")
-                        foregroundColor(.white)
-                            .font(.title3)
-                            .bold()
-                        
-                        Spacer()
-                        Image(systemName: "ellipsis")
-                            .resizable()
-                            .frame(width: 20,height: 3)
-                            .foregroundColor(.gray)
-                      
-                        
-                        
-                        
-                        
-                        VStack{
-                            HStack{
-                                Image(systemName:"record.circle")
-                                    .resizable()
-                                    .frame(width: 16,height: 16)
-                                    .foregroundColor(.white)
-                                    .background(.green)
-                                    .cornerRadius(3)
-                                    .padding()
-                                Text("Issues")
-                                    .foregroundColor(.white.opacity(0.8))
-                                Spacer()
-                                
-                                    
-                                
-                                
-                            }
-                            Divider()
-                            
-                            HStack{
-                                Image(systemName: "point.bottomleft.forward.to.arrowtriangle.uturn.scurvepath.fill")
-                                    .resizable()
-                                    .frame(width: 16,height: 16)
-                                    .foregroundColor(.white)
-                                    .background(.blue)
-                                    .cornerRadius(3)
-                                    .padding()
-                                
-                                Text("Pull Requests")
-                                    .foregroundColor(.white.opacity(0.8))
-                                Spacer()
-                                
-                                
-                            }
-                            Divider()
-                            HStack{
-                                Image(systemName: "bubble.left.and.bubble.right")
-                                    .resizable()
-                                    .frame(width: 16,height: 16)
-                                    .foregroundColor(.white)
-                                    .background(.purple)
-                                    .cornerRadius(3)
-                                    .padding()
-                                
-                                Text("Discussion")
-                                    .foregroundColor(.white.opacity(0.8))
-                                Spacer()
-                   
-                                
-                            }
-                            Divider()
-                            HStack{
-                                Image(systemName: "folder")
-                                    .resizable()
-                                    .frame(width: 16,height: 16)
-                                    .foregroundColor(.white)
-                                    .background(.white.opacity(0.8))
-                                    .cornerRadius(3)
-                                    .padding()
-                                
-                                Text("Projects")
-                                    .foregroundColor(.white.opacity(0.8))
-                                Spacer()
-                               
-                            }
-                            Divider()
-                            HStack{
-                                Image(systemName: "book.closed")
-                                    .resizable()
-                                    .frame(width: 16,height: 16)
-                                    .foregroundColor(.white)
-                                
-                                    .background(.gray)
-                                    .cornerRadius(3)
-                                    .padding()
-                                
-                                Text("Repositories")
-                                    .foregroundColor(.white.opacity(0.8))
-                                Spacer()
-                               
-                            }
-                            Divider()
-                            HStack{
-                                Image(systemName: "building.2")
-                                    .resizable()
-                                    .frame(width: 16,height: 16)
-                                    .foregroundColor(.white)
-                                
-                                    .background(.orange)
-                                    .cornerRadius(3)
-                                    .padding()
-                                
-                                Text("Organization")
-                                    .foregroundColor(.white.opacity(0.8))
-                                Spacer()
-                               
-                                
-                            }
-                            Divider()
-                            HStack{
-                                Image(systemName: "star")
-                                    .resizable()
-                                    .frame(width: 16,height: 16)
-                                    .foregroundColor(.white)
-                                    .background(.yellow)
-                                    .cornerRadius(3)
-                                    .padding()
-                                Text("starred")
-                                    .foregroundColor(.white)
-                                    .foregroundColor(.white.opacity(0.8))
-                                Spacer()
-                               
-                                
-                            }
-                            
-                        }
-                       
-                        .background(
-                            
-                            RoundedRectangle(
-                                
-                                cornerRadius: 16,
-                                style: .continuous
-                            )
-                            .fill(.white.opacity(0.1))
-                            
-                            
-                        )
-                        HStack{
-                            Text("Favorites")
-                            
-                                .font(.title)
-                                .foregroundStyle(.white)
-                            Spacer()
-                            Image(systemName: "ellipsis")
-                                .resizable()
-                                .frame(width: 18,height: 3)
-                                .foregroundColor(.gray)
-                            
-                        }
-                        
-                        ZStack{
-                            RoundedRectangle(cornerRadius: 20)
-                                .fill(.white.opacity(0.2))
-                                .padding(.horizontal)
-                                .frame( height: 220 )
-                            
-                            VStack{
-                                Text("Add favorite repositories here to have quick access at any time, without having to search")
-                                    .foregroundColor(.white)
-                                    .multilineTextAlignment(.center)
-                                    .padding(.horizontal)
-                                    .padding(.top)
-                                
-                                
-                            }
-                        }
-                        
-                    }
+        ScrollView {
+            RoundedRectangle(cornerRadius: 8)
+                .frame(height: 8 * 20)
+                .padding()
+            VStack {
+                HStack {
+                    Text("My Work")
                     Spacer()
+                    Image(systemName: "ellipsis")
                 }
                 
+                VStack {
+                    ForEach(myWorkRows) { row in
+                        makeRow(row: row)
+                        if myWorkRows.last?.id != row.id {
+                            Divider()
+                                .padding(.leading)
+                        }
+                    }
+                }
+                .padding(.vertical)
+                .background(.white.opacity(0.75))
+                .cornerRadius(8)
                 
             }
-        }}
-    struct ShowHomeView: PreviewProvider {
-        static var previews: some View {
-          HomeView()
-        }}
+            .frame(
+                maxWidth: .infinity,
+                alignment: .leading
+            )
+            .padding(.horizontal)
+            
+            VStack {
+                HStack {
+                    Text("Favorites")
+                    Spacer()
+                    Image(systemName: "ellipsis")
+                }
+                
+                VStack {
+                    Text("Add favorite repositories here to have quick access at any time, without having to search")
+                        .multilineTextAlignment(.center)
+                    Button(
+                        action: {},
+                        label: {
+                            Text("Add Favorites")
+                                .frame(maxWidth: .infinity)
+                                .frame(height: 8 * 8)
+                                .background(
+                                    RoundedRectangle(cornerRadius: 8)
+                                        .fill(.white)
+                                )
+                        }
+                    )
+                }
+                .frame(maxWidth: .infinity)
+                .padding(.vertical)
+                .padding(.horizontal)
+                .background(.white.opacity(0.75))
+                .cornerRadius(8)
+            }
+            .frame(
+                maxWidth: .infinity,
+                alignment: .leading
+            )
+            .padding(.horizontal)
+            
+        }
+        .background(.gray.opacity(0.25))
+    }
+    
+    func makeRow(row: RowData) -> some View {
+        HStack {
+            Image(systemName: row.leadingImageName)
+                .resizable()
+                .scaledToFit()
+                .frame(width: 24, height: 24)
+                .foregroundColor(row.leadingImageForegroundColor)
+                .padding(8)
+                .background(
+                    RoundedRectangle(cornerRadius: 8)
+                        .fill(row.leadingImageBackgroundColor)
+                )
+            Text(row.title)
+            Spacer()
+            Image(systemName: "chevron.right")
+        }
+        .padding(.horizontal)
+    }
+}
+
+struct HomeView_Previews: PreviewProvider {
+    static var previews: some View {
+        HomeView()
+    }
+}
+
+struct RowData: Identifiable {
+    let id = UUID()
+    let title: String
+    let leadingImageName: String
+    let leadingImageForegroundColor: Color = .white
+    let leadingImageBackgroundColor: Color
+}
+
+
+struct ShowHomeView: PreviewProvider {
+    static var previews: some View {
+        HomeView()
+    }
 }

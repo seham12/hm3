@@ -10,82 +10,84 @@ import SwiftUI
 struct InboxView: View {
     var body: some View {
         
-        ZStack{
-            Color.black
-                .ignoresSafeArea(.all)
+       ZStack{
+        Color.black
+        .ignoresSafeArea(.all)
+            
             VStack{
-                Text("Inbox")
-                    .font(.largeTitle)
-                    .foregroundColor(.white)
-                    .padding(.trailing,300)
-                    .fontWeight(.bold)
+        Text("Inbox")
+        .font(.largeTitle)
+        .foregroundColor(.white)
+       .padding(.trailing,300)
+       .bold()
+                
                 HStack{
-                    
+                                
                     Button(action:{}) {
                         Text("Inbox")
+                        Image(systemName: "chevron.down")
                         
-                            .fontWeight(.regular)
-                            .frame(width: 80,height: 10)
-                            .font(.caption)
-                            .foregroundColor(.white)
-                            .background(Color.white.opacity(0.2))
-                            .cornerRadius(30)
-                            .padding()
-                        
-                        
-                        
-                        
-                        Button(action:{}) {
-                            Text("Unread")
-                            
-                        } .fontWeight(.regular)
-                            .frame(width: 80,height: 10)
-                            .font(.caption)
-                            .foregroundColor(.white)
-                            .padding()
-                            .background(Color.white.opacity(0.2))
-                            .cornerRadius(30)
-                        
-                        
-                        Button(action:{}) {
-                            Text("Repository")
-                            
-                        }
-                        .fontWeight(.regular)
-                        .frame(width: 100,height: 10)
-                        .font(.caption)
-                        .foregroundColor(.white)
-                        .padding()
-                        .background(Color.white.opacity(0.2))
-                        .cornerRadius(30)
-                        
-                        Spacer()
-                        
+                                }
+                                    .frame(width: 100,height: 30)
+                                    .font(.caption)
+                                    .foregroundColor(.white)
+                                    .background(Color.gray.opacity(0.4))
+                                    .cornerRadius(30)
+                                    .padding(3)
+                                    .padding(.leading,5)
+                                
+                    Button(action:{}) {
+                                    Text("Unread")
+                                    Image(systemName: "chevron.down")
+                                }
+                                    .frame(width: 100,height: 30)
+                                    .font(.caption)
+                                    .foregroundColor(.white)
+                                    .background(Color.gray.opacity(0.4))
+                                    .cornerRadius(30)
+                                    .padding(3)
+                               
+                    Button(action:{}) {
+                        Text("Repository")
+                        Image(systemName: "chevron.down")
                     }
-                    
-                    
-                    
-                    Text("All caught up!")
-                        .foregroundColor(.white)
-                        .font(.title)
-                        .fontWeight(.bold)
-                    Text("Take a break, write some code, and do what you do best.")
-                        .foregroundColor(.gray)
-                        .font(.title3)
-                        .multilineTextAlignment(.center)
-                        .padding(.horizontal)
-                    Spacer()
-                }
+                                    .frame(width: 150,height: 30)
+                                    .font(.caption)
+                                    .foregroundColor(.white)
+                                    .background(Color.gray.opacity(0.4))
+                                    .cornerRadius(30)
+                                    .padding(3)
+                                Spacer()
+                                
+                            }
+                            Divider()
+                                .background(.white.opacity(0.2))
+                                
+                           Image("Image1")
+                                .resizable()
+                                .frame(width: 400,height: 400)
+                                .scaledToFill()
+                            
+                            Text("All caught up!")
+                                .foregroundColor(.white)
+                                .font(.title)
+                                .fontWeight(.bold)
+                            Text("Take a break, write some code, and do what you do best.")
+                                .foregroundColor(.gray)
+                                .font(.title3)
+                                .multilineTextAlignment(.center)
+                                .padding(.horizontal)
+                         
+                        }
+                    }
+                        }
             }
-        }}
+struct ShowInboxView: PreviewProvider {
+    static var previews: some View {
+        InboxView()
+    }
 }
-    
-    
-    struct ShowInboxView: PreviewProvider {
-        static var previews: some View {
-            InboxView()
-        }}
-    
-    
-    
+
+
+
 
